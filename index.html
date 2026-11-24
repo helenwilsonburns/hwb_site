@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helen L. Wilson Burns, PhD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="#top">Helen L. Wilson Burns</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#cv">CV</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ===== HERO: your name, role, keywords, email, and the four colour blocks ===== -->
+<div class="plate" id="top">
+  <div class="wrap">
+    <div class="hero">
+      <div class="hero-text">
+        <h1 class="name">Helen L. Wilson Burns, PhD</h1>
+        <p class="role">Environmental demographer. NIH T32-funded postdoctoral fellow at the Carolina Population Center, UNC Chapel Hill.</p>
+        <p class="keywords">Climate migration, climate change adaptation, computational and quantitative environmental social science, and human&ndash;environmental data integration.</p>
+        <p class="contact"><a href="mailto:helenwb@unc.edu">helenwb@unc.edu</a></p>
+      </div>
+      <div class="blk blk-mig"><span>migration</span></div>
+      <div class="blk blk-env"><span>environment</span></div>
+      <img class="hero-portrait" src="images/portrait.jpg" alt="Helen L. Wilson Burns" width="640" height="854">
+      <div class="blk blk-hea"><span>population health</span></div>
+      <div class="blk blk-rur"><span>rurality</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ===== ABOUT: edit the text between the <p> and </p> tags ===== -->
+  <section id="about">
+    <h2>About</h2>
+    <div class="prose">
+      <p>I am an environmental demographer and a NIH T32-funded postdoctoral fellow at the Carolina Population Center at UNC Chapel Hill.</p>
+      <p>My research examines intersections of migration, population health, environmental change, and rurality using interdisciplinary methods. My work spans geographic contexts and demographic inquires, from investigating women's migration and post-COVID well-being in Bangladesh to analyzing disaster impacts and rural health vulnerabilities in the United States. I am most interested in work that uses detailed data about people&rsquo;s lives to understand and complicate large, complex demographic trends.</p>
+      <p>I contribute methodological expertise in research design, data integration, and advanced analysis to multidisciplinary, multi-university collaborations. I excel at synthesizing complex spatial-temporal data from diverse sources to address pressing social and environmental changes.</p>
+      <p>Originally from the mountains of rural Tennessee, I hold a BA in International Affairs from the George Washington University and an MS and PhD in Environmental Studies from the University of Colorado Boulder. Before graduate school, I worked for international development and non-profit organizations in Myanmar, Puerto Rico, and Washington, D.C.</p>
+    </div>
+
+    <div class="strip">
+      <figure>
+        <img src="images/field-walkway.jpg" alt="A raised bamboo walkway crossing flooded ground, with people walking along it" width="1333" height="1000">
+        <figcaption>Seasonal flooding, coastal Bangladesh</figcaption>
+      </figure>
+      <figure>
+        <img src="images/field-team.jpg" alt="A large group of field team members and survey participants gathered outdoors" width="1333" height="1000">
+        <figcaption>Field team and survey participants, Bangladesh</figcaption>
+      </figure>
+      <figure>
+        <img src="images/field-storm.jpg" alt="A storm front with a lightning strike over open country" width="1369" height="1000">
+        <figcaption>Storm front over open country</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== RESEARCH =====
+       To add a project: copy one whole <li class="project"> ... </li> block and edit it.
+       The coloured stripe down its left edge is set by the style="--stripe:..." attribute:
+         migration #eda100 · environment #008300 · population health #e34948 · rurality #2a78d6
+       To add a paper: copy one <li class="paper"> ... </li> block inside that project.
+       Paper status classes: s-pub (published) s-cond (conditionally accepted)
+                             s-rev (under review) s-near (near submission) s-prog (in progress)
+  ===== -->
+  <section id="research">
+    <h2>Research</h2>
+    <div class="asks">
+      <div>
+        <p class="asklead">My research asks:</p>
+        <p class="question">How can quantitative demographic methodologies illuminate complexity in the ways populations respond to socioenvironmental change?</p>
+        <p class="question">For whom and under what conditions is migration an adaptive response to climate change?</p>
+      </div>
+      <div class="vennwrap">
+      <svg class="venn" viewBox="0 0 560 560" role="img" aria-label="Four research domains — migration, environment, population health, and rurality — overlapping inside demographic methods.">
+        <circle cx="280" cy="280" r="270" fill="#E4EDEA"/>
+        <circle cx="280" cy="280" r="270" fill="none" stroke="#9FBDBA" stroke-width="1.5"/>
+        <g>
+          <circle cx="206" cy="206" r="152" fill="#eda100" opacity=".72"/>
+          <circle cx="354" cy="206" r="152" fill="#008300" opacity=".72"/>
+          <circle cx="206" cy="354" r="152" fill="#e34948" opacity=".72"/>
+          <circle cx="354" cy="354" r="152" fill="#2a78d6" opacity=".72"/>
+        </g>
+        <text x="280" y="42" text-anchor="middle" fill="#2C5A5C" font-size="16.5" font-weight="600" letter-spacing=".04em">demographic methods</text>
+      </svg>
+      <ul class="key">
+        <li><span class="dot mig"></span>migration</li>
+        <li><span class="dot env"></span>environment</li>
+        <li><span class="dot hea"></span>population health</li>
+        <li><span class="dot rur"></span>rurality</li>
+      </ul>
+      </div>
+    </div>
+
+    <ul class="projects">
+
+      <li class="project" style="--stripe:linear-gradient(to bottom,#eda100 0 33.3%,#008300 33.3% 66.6%,#2a78d6 66.6% 100%)">
+        <div class="pgrid nophoto">
+          <div>
+            <ul class="tags"><li class="tag"><span class="dot mig"></span>migration</li><li class="tag"><span class="dot env"></span>environment</li><li class="tag"><span class="dot rur"></span>rurality</li></ul>
+            <h3>Extreme flooding and household migration in the United States</h3>
+            <p class="role-line">Linking flood hazard maps to Census address records inside the Federal Statistical Research Data Center, to measure how household moves respond to flood exposure at national scale.</p>
+            <p class="meta">Postdoctoral project. Restricted federal microdata under Special Sworn Status.</p>
+          </div>
+        </div>
+        <ul class="papers">
+          <li class="paper"><span class="status s-prog">In development</span><div><p class="t">First paper in preparation.</p></div></li>
+        </ul>
+      </li>
+
+      <li class="project" style="--stripe:linear-gradient(to bottom,#eda100 0 33.3%,#008300 33.3% 66.6%,#e34948 66.6% 100%)">
+        <div class="pgrid">
+          <div>
+            <ul class="tags"><li class="tag"><span class="dot mig"></span>migration</li><li class="tag"><span class="dot env"></span>environment</li><li class="tag"><span class="dot hea"></span>population health</li></ul>
+            <h3>Migration, health, and flooding across the Global South</h3>
+            <p class="role-line">Examining global patterns of women's health and mobility in the context of flooding, pairing household survey data with hydrological exposure measures.</p>
+            <p class="meta">Postdoctoral project. With Clark Gray and Miyuki Hino.</p>
+          </div>
+          <figure class="pphoto" style="margin:0">
+            <img src="images/field-flood.jpg" alt="Flooded cropland with scattered vegetation" width="1333" height="1000">
+            <figcaption>Flooded cropland</figcaption>
+          </figure>
+        </div>
+        <ul class="papers">
+          <li class="paper"><span class="status s-prog">In progress</span><div><p class="t">Women's well-being, migration, and flooding in the Global South</p><p class="a">Wilson Burns, Gray, Hino, Blessing, and Sebastian</p></div></li>
+        </ul>
+      </li>
+
+      <li class="project" style="--stripe:linear-gradient(to bottom,#eda100 0 33.3%,#008300 33.3% 66.6%,#e34948 66.6% 100%)">
+        <div class="pgrid">
+          <div>
+            <ul class="tags"><li class="tag"><span class="dot mig"></span>migration</li><li class="tag"><span class="dot env"></span>environment</li><li class="tag"><span class="dot hea"></span>population health</li></ul>
+            <h3>Migration in Bangladesh</h3>
+            <p class="role-line">A longitudinal, mixed-methods study of migration and environmental stress in coastal Bangladesh. I co-designed the research, led development of the digital survey instrument, and ran the mixed-methods interviews.</p>
+            <p class="meta">With Amanda Carrico, Katharine Donato, and Bishawjit Mallick. NSF-funded. <a href="#" data-needs-url="bems">More about the Bangladesh Environment and Migration Survey</a></p>
+          </div>
+          <figure class="pphoto" style="margin:0">
+            <img src="images/field-village.jpg" alt="A riverbank settlement of stilted houses under palm trees" width="1333" height="1000">
+            <figcaption>Riverbank settlement, coastal Bangladesh</figcaption>
+          </figure>
+        </div>
+        <ul class="papers">
+          <li class="paper">
+            <span class="status s-cond">Conditionally accepted</span>
+            <div>
+              <p class="t">Diversity and Change in Women's Migration in Bangladesh</p>
+              <p class="a">Wilson Burns, Donato, Mallick, and Carrico &middot; <em>Demography</em></p>
+              <p class="d">How women migrate from Bangladesh is changing, and this study maps that shift. Using survival analysis and a novel typology of survey microdata, I find birth cohort increases in economic and educational migration, driven by mechanisms distinct from traditional family-based moves, revealing how migration flows mature and gendered networks drive change.</p>
+            </div>
+          </li>
+          <li class="paper">
+            <span class="status s-pub">Published, 2026</span>
+            <div>
+              <p class="t">Do Social Networks Moderate the Effect of Extreme Weather on Migration?</p>
+              <p class="a">Carrico, Wilson Burns, Donato, Rahaman, and Best &middot; <em>Population and Development Review</em> &middot; <a href="https://doi.org/10.1111/padr.70061">doi:10.1111/padr.70061</a></p>
+              <p class="d">Extreme weather can influence who migrates in and from Bangladesh, but migrant networks complicate the story. Using retrospective household data, this study finds that social ties to migrants strongly predict first migration trips, particularly international ones, and tend to dampen rather than amplify weather-driven migration. Heat waves and storms have small, gender-divergent effects on domestic moves, while international migration responses to heat depend heavily on a community's existing migration networks.</p>
+            </div>
+          </li>
+          <li class="paper">
+            <span class="status s-rev">Under review</span>
+            <div>
+              <p class="t">Remittances and Well-being Resilience after COVID-19: Evidence from Bangladesh</p>
+              <p class="a">Wilson Burns, Donato, and Carrico</p>
+              <p class="d">Our work using longitudinal survey data from Bangladesh uncovers enduring declines in well-being two years after the acute stage of COVID-19. We find that remittance receipt nor return migration do not predict well-being, while agricultural and community-level livelihood disruptions during the major lockdown predicted lasting psychological distress and worse health&mdash;challenging assumptions about remittances' lasting protective role after livelihood crisis.</p>
+            </div>
+          </li>
+          <li class="paper">
+            <span class="status s-prog">In progress</span>
+            <div>
+              <p class="t">Who goes where when there's (no) rain? Modeling household labor migration choices across gender and destination after environmental stress in Bangladesh</p>
+              <p class="a">Wilson Burns, Islam, Donato, and Carrico</p>
+            </div>
+          </li>
+          <li class="paper">
+            <span class="status s-prog">In progress</span>
+            <div>
+              <p class="t">Land use change and migration in coastal Bangladesh: A community-level analysis</p>
+              <p class="a">Paul, Burchfield, Wilson Burns, Donato, Small, and Carrico</p>
+            </div>
+          </li>
+        </ul>
+      </li>
+
+      <li class="project" style="--stripe:linear-gradient(to bottom,#eda100 0 50%,#008300 50% 100%)">
+        <div class="pgrid nophoto">
+          <div>
+            <ul class="tags"><li class="tag"><span class="dot mig"></span>migration</li><li class="tag"><span class="dot env"></span>environment</li></ul>
+            <h3>Climate Migration in Mexico</h3>
+            <p class="role-line">This study finds that drought-related shocks produce heterogeneous effects on international and internal migration rates, and are highly shaped by local social and economic contexts, gender, and life stage. I integrated sociodemographic data from Mexican census and government sources with climate data, leading cluster and difference-in-difference analyses.</p>
+            <p class="meta">With Fernando Riosmena, Johannes Uhl, and Stefan Leyk.</p>
+          </div>
+        </div>
+        <ul class="papers">
+          <li class="paper"><span class="status s-near">Near submission</span><div><p class="t">Drought and migration across contexts and demography in Mexico</p><p class="a">Wilson Burns, Riosmena, Uhl, and Leyk</p></div></li>
+        </ul>
+      </li>
+
+      <li class="project" style="--stripe:linear-gradient(to bottom,#e34948 0 33.3%,#2a78d6 33.3% 66.6%,#008300 66.6% 100%)">
+        <div class="pgrid nophoto">
+          <div>
+            <ul class="tags"><li class="tag"><span class="dot hea"></span>population health</li><li class="tag"><span class="dot rur"></span>rurality</li><li class="tag"><span class="dot env"></span>environment</li></ul>
+            <h3>Extreme environmental events and rural elderly health</h3>
+            <p class="role-line">We examine how extreme environmental events like disasters and heat affect health and mortality among rural elderly Americans. By comparing rural and urban outcomes, the study builds evidence for protective and adaptive policy tailored to rural contexts. Under Special Sworn Status with the U.S. Census Bureau, I led integration and analysis of restricted National Health Interview Survey data with FEMA and SHELDUS disaster and climate data.</p>
+            <p class="meta">With Lori Hunter, Catherine Talbot, Dylan Connor, and Taylor Jaworski. Center for Aging, Climate, &amp; Health and NIA-funded. <a href="#" data-needs-url="aging">More about this project</a></p>
+          </div>
+        </div>
+        <ul class="papers">
+          <li class="paper"><span class="status s-prog">In progress</span><div><p class="t">Older adult migration patterns and disaster exposure across the U.S.</p><p class="a">Hunter, Jackson, Wilson Burns, Talbot, Connor, and Kass</p></div></li>
+        </ul>
+      </li>
+
+      <li class="project" style="--stripe:linear-gradient(to bottom,#eda100 0 33.3%,#008300 33.3% 66.6%,#2a78d6 66.6% 100%)">
+        <div class="pgrid nophoto">
+          <div>
+            <ul class="tags"><li class="tag"><span class="dot mig"></span>migration</li><li class="tag"><span class="dot env"></span>environment</li><li class="tag"><span class="dot rur"></span>rurality</li></ul>
+            <h3>The Changing Demography of Disaster Impact in the US</h3>
+            <p class="role-line">This project tracks how natural hazard burdens across the U.S. have shifted over the past decade, with attention to demographic disparities in exposure. My work examines mobility and exposure patterns across sociodemographic groups, linking migration to social vulnerability in disaster-affected areas amid rising disaster frequency. I co-developed code integrating the SHELDUS hazard loss database with ACS microdata, running analyses on supercomputing infrastructure to identify exposure patterns across population segments.</p>
+            <p class="meta">With Deborah Balk, Dylan Connor, Jenna Tipaldo, Lori Hunter, and Melanie Gall.</p>
+          </div>
+        </div>
+        <ul class="papers">
+          <li class="paper"><span class="status s-prog">In progress</span><div><p class="t">A person-level linkage of U.S. hazard losses to the American Community Survey, 2005&ndash;2024</p><p class="a">Connor, Balk, Gall, Hunter, Jang, Tipaldo, and Wilson Burns</p></div></li>
+        </ul>
+      </li>
+
+    </ul>
+
+    <div class="expertise">
+      <h3>Expertise</h3>
+      <div class="cols3">
+        <div style="--accent:var(--mig)">
+          <p class="blockhead">Advanced quantitative analysis</p>
+          <ul class="bullets">
+            <li>Microdata processing and analysis</li>
+            <li>Longitudinal and time-series analysis; survival analysis and event history modeling</li>
+            <li>Multilevel modeling</li>
+            <li>Complex survey design</li>
+            <li>Advanced in Stata, including fluent coding in restricted offline settings</li>
+            <li>Highly proficient in R</li>
+          </ul>
+        </div>
+        <div style="--accent:var(--hea)">
+          <p class="blockhead">Research design and implementation</p>
+          <ul class="bullets">
+            <li>Survey development, field testing, enumerator training, and implementation</li>
+            <li>Mixed-methods research design</li>
+            <li>Cross-cultural data collection and collaboration</li>
+            <li>Advanced programming in KoboToolbox and XLSForm for digital survey instruments</li>
+          </ul>
+        </div>
+        <div style="--accent:var(--env)">
+          <p class="blockhead">Social-environmental data integration</p>
+          <ul class="bullets">
+            <li>Merging climate and disaster data with demographic data across scales</li>
+            <li>Spatial-temporal analysis of population-environment interactions</li>
+            <li>Harmonization of multi-source environmental and social datasets</li>
+            <li>Development of metrics for environmental exposure</li>
+            <li>Use of restricted data from NCHS and the U.S. Census Bureau in a Federal Statistical Research Data Center</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEACHING: each <li> is one row; the <span class="when"> is the date column ===== -->
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <p class="sectionnote">My teaching philosophy centers on developing critical thinking through interdisciplinary data literacy and quantitative reasoning.</p>
+
+    <div class="cols">
+      <div>
+        <div class="block">
+          <p class="blockhead">I am interested in teaching courses focused on</p>
+          <ul class="bullets">
+            <li>Environmental social science &amp; human dimensions of climate change</li>
+            <li>Research design in the social and environmental sciences</li>
+            <li>Population and environment</li>
+            <li>Statistics and data literacy as tools for understanding complex social-environmental phenomena</li>
+            <li>Migration dynamics and theory</li>
+            <li>Demographic concepts and methodology</li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <p class="blockhead">Workshops and short courses</p>
+          <ul class="listing">
+            <li><span>Curriculum developer, Disaster Data for Demographic Research<span class="sub">Population Association of America</span></span><span class="when">2025</span></li>
+            <li><span>Lead instructor, Integrating Social and Environmental Data to Support Climate Migrants<span class="sub">Three one-day workshops on data science and R, co-hosted by the University of Barishal, BRAC, and the University of Khulna, Bangladesh</span></span><span class="when">2024</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <div class="block">
+          <p class="blockhead">Teaching experience</p>
+          <ul class="listing">
+            <li><span>Lead graduate student fellow, Center for Teaching &amp; Learning<span class="sub">University of Colorado Boulder</span></span><span class="when">2025&ndash;26</span></li>
+            <li><span>Guest lecturer, Population and Environment<span class="sub">Environmental Studies 1001</span></span><span class="when">2024, 2025</span></li>
+            <li><span>Guest lecturer, Working in International Development<span class="sub">Geography 3682</span></span><span class="when">2024</span></li>
+            <li><span>Teaching assistant, Interdisciplinary Social Science Professional Socialization<span class="sub">Geography 6851</span></span><span class="when">2023</span></li>
+            <li><span>Teaching assistant, Introduction to Environmental Studies<span class="sub">Environmental Studies 1000; 3&ndash;4 recitations per semester, roughly 50 students</span></span><span class="when">2020&ndash;21</span></li>
+          </ul>
+        </div>
+
+        <div class="block">
+          <p class="blockhead">Mentoring</p>
+          <ul class="listing">
+            <li><span>Primary advisor, honors thesis, Environmental Studies</span><span class="when">2024&ndash;26</span></li>
+            <li><span>McNair Scholars graduate mentor<span class="sub">Two undergraduates</span></span><span class="when">2023&ndash;25</span></li>
+            <li><span>Graduate peer mentor</span><span class="when">2024&ndash;25</span></li>
+            <li><span>STUDIO Lab mentor, undergraduate research</span><span class="when">2024</span></li>
+            <li><span>Co-advisor, honors thesis, Environmental Studies</span><span class="when">2020&ndash;21</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="strip">
+      <figure>
+        <img src="images/field-notes.jpg" alt="Three people sitting on grass with notebooks in a mountain valley" width="1333" height="1000">
+        <figcaption>Fieldwork training</figcaption>
+      </figure>
+      <figure>
+        <img src="images/field-river.jpg" alt="A village along a wide river with boats pulled up on the bank" width="1333" height="1000">
+        <figcaption>River village, Bangladesh</figcaption>
+      </figure>
+      <figure>
+        <img src="images/field-crops.jpg" alt="Rows of cabbages in a field under heavy cloud" width="1333" height="1000">
+        <figcaption>Cropland under cloud</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== CV: replace cv.pdf in the repo root to update the download ===== -->
+  <section id="cv">
+    <h2>Curriculum vitae</h2>
+    <p class="sectionnote">The full record of publications, grants, presentations, teaching, and service.</p>
+    <a class="cvbtn" href="cv.pdf">Download CV (PDF)</a>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap footrow">
+    <span>Reach out to <a href="mailto:helenwb@unc.edu">helenwb@unc.edu</a>, I&rsquo;d love to hear from you.</span>
+    <span>Carolina Population Center, Chapel Hill, North Carolina</span>
+  </div>
+</footer>
+
+</body>
+</html>
