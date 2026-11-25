@@ -94,7 +94,8 @@ a{color:inherit}
 /* The address is written out, never as a mailto: — there is deliberately
    nothing here for an address harvester to read. Keep it that way. */
 .addr{color:#fff;border-bottom:2px solid var(--mig);padding-bottom:1px;white-space:nowrap}
-.hero-portrait{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 28%}
+/* square frame matches the portrait crop exactly, so nothing is re-cropped */
+.hero-portrait{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 50%}
 
 /* the four-colour band: the legend for the whole site */
 .band{display:grid;grid-template-columns:repeat(4,1fr)}
@@ -265,7 +266,7 @@ footer a:hover,footer a:focus-visible{background:var(--mig);color:var(--mig-on)}
   section{scroll-margin-top:7rem}
   .nav{gap:1.15rem}
   .hero{grid-template-columns:1fr;gap:2.25rem;padding:2.25rem 0 2.5rem}
-  .hero-portrait{max-width:15rem;aspect-ratio:1/1}
+  .hero-portrait{max-width:15rem}
   .ident{margin-bottom:1.5rem}
   .bigq{max-width:none}
   .creds{grid-template-columns:1fr;gap:1.4rem;padding-bottom:2.5rem}
