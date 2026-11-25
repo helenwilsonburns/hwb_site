@@ -1,145 +1,279 @@
-  :root{
-    --mig:#eda100; --env:#008300; --hea:#e34948; --rur:#2a78d6;
-    --plate:#0E3A43; --plate-deep:#092B32;
-    --ink:#12222A; --body:#3A464D; --muted:#6B767C;
-    --surface:#FCFCFB; --rule:#DFE4E2;
-    --display:"IBM Plex Serif",Georgia,serif;
-    --text:"IBM Plex Sans",system-ui,sans-serif;
+/* ============================================================
+   helenwilsonburns.com
+
+   COLOUR RULE: the four domain hues are used for domains and
+   nothing else. Publication stage uses a separate grey ramp.
+   Keeping that rule is what makes the colour mean something.
+   ============================================================ */
+
+:root{
+  /* the four research domains */
+  --mig:#F2A93B;   --mig-on:#2A1A00;   /* migration         */
+  --env:#10765C;   --env-on:#FFFFFF;   /* environment       */
+  --hea:#D4356B;   --hea-on:#FFFFFF;   /* population health */
+  --rur:#3457D5;   --rur-on:#FFFFFF;   /* rurality          */
+
+  /* publication stage: one hue, five steps, earliest to latest */
+  --st1:#B3BDC2;   /* in progress        */
+  --st2:#8D9AA1;   /* near submission    */
+  --st3:#5F7078;   /* under review       */
+  --st4:#334A55;   /* conditionally acc. */
+  --st5:#10242E;   /* published          */
+
+  --ink:#10242E;
+  --ink-deep:#0A181F;
+  --body:#3C4A52;
+  --muted:#6A757E;
+  --surface:#FFFFFF;
+  --rule:#E3E7E7;
+  --rule-mid:#C8D0D0;
+
+  --display:"Newsreader",Georgia,"Times New Roman",serif;
+  --text:"Inter Tight",system-ui,-apple-system,"Segoe UI",sans-serif;
+
+  --gutter:2rem;
+  --cells:17rem;          /* width of the four matrix columns */
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  margin:0;background:var(--surface);color:var(--ink);
+  font-family:var(--text);font-size:1.0625rem;line-height:1.6;
+  font-synthesis-weight:none;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+
+.wrap{max-width:72rem;margin:0 auto;padding:0 var(--gutter)}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:0;z-index:30;background:var(--ink)}
+.topbar .wrap{
+  display:flex;align-items:baseline;justify-content:space-between;
+  gap:1.5rem;flex-wrap:wrap;padding-top:.8rem;padding-bottom:.8rem;
+}
+.wordmark{
+  font-family:var(--display);font-weight:500;font-size:1.0625rem;
+  letter-spacing:-.015em;color:#fff;text-decoration:none;
+}
+.nav{display:flex;gap:1.6rem;font-size:.875rem;font-weight:500;letter-spacing:.005em}
+.nav a{color:#9FB2B9;text-decoration:none;padding-bottom:2px;border-bottom:2px solid transparent}
+.nav a:hover,.nav a:focus-visible{color:#fff;border-bottom-color:var(--mig)}
+
+/* ---------- hero ---------- */
+.plate{background:var(--ink);color:#E7EEF0}
+.hero{
+  display:grid;grid-template-columns:1.5fr .8fr;gap:3.5rem;
+  align-items:center;padding:4.25rem 0 4.5rem;
+}
+.name{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(2.75rem,6.1vw,4.9rem);
+  line-height:.99;letter-spacing:-.028em;margin:0;color:#fff;
+  text-wrap:balance;
+}
+.role{margin:1.6rem 0 0;max-width:40ch;font-size:1.0625rem;color:#C2D2D7}
+.keywords{margin:1.1rem 0 0;max-width:46ch;font-size:.9375rem;line-height:1.55;color:#8EA4AD}
+.contact{margin:1.9rem 0 0;font-size:1rem;font-weight:500}
+/* The address is written out, never as a mailto: — there is deliberately
+   nothing here for an address harvester to read. Keep it that way. */
+.addr{color:#fff;border-bottom:2px solid var(--mig);padding-bottom:1px;white-space:nowrap}
+.hero-portrait{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 28%}
+
+/* the four-colour band: the legend for the whole site */
+.band{display:grid;grid-template-columns:repeat(4,1fr)}
+.band div{display:flex;align-items:flex-end;padding:1.6rem 1.15rem 1.3rem;min-height:7.5rem}
+.band span{font-size:1.1875rem;font-weight:600;letter-spacing:-.015em;line-height:1.12}
+.b-mig{background:var(--mig);color:var(--mig-on)}
+.b-env{background:var(--env);color:var(--env-on)}
+.b-hea{background:var(--hea);color:var(--hea-on)}
+.b-rur{background:var(--rur);color:var(--rur-on)}
+
+/* ---------- sections ---------- */
+section{padding:4.75rem 0 0;scroll-margin-top:4rem}
+section > h2{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(1.9rem,3.4vw,2.5rem);line-height:1.1;letter-spacing:-.02em;
+  margin:0 0 1.75rem;padding-top:1.1rem;border-top:2px solid var(--ink);
+}
+.sectionnote{margin:-1.1rem 0 2.25rem;color:var(--muted);font-size:1rem;max-width:72ch}
+
+h3{font-family:var(--text);font-weight:600;font-size:1.25rem;line-height:1.3;letter-spacing:-.016em;margin:0 0 .5rem}
+
+.prose{max-width:66ch;font-size:1.0625rem;color:var(--body)}
+.prose p{margin:0 0 1.1rem}
+.prose p:last-child{margin-bottom:0}
+.prose a{color:var(--rur);text-decoration-thickness:1px;text-underline-offset:2px}
+
+/* ---------- photo strips ---------- */
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin:3rem 0 0}
+.strip figure{margin:0}
+.strip img{aspect-ratio:4/3;object-fit:cover}
+.strip figcaption{margin:.6rem 0 0;font-size:.8125rem;color:var(--muted);line-height:1.4}
+
+/* ---------- research questions ---------- */
+.asks{margin:0 0 3rem;max-width:54rem}
+.question{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(1.3rem,2.3vw,1.6rem);line-height:1.34;letter-spacing:-.012em;
+  color:var(--ink);margin:0 0 1.1rem;max-width:46ch;text-wrap:pretty;
+}
+.question:last-child{margin-bottom:0}
+
+/* ---------- the research matrix ---------- */
+.mhead{
+  display:grid;grid-template-columns:1fr var(--cells);
+  align-items:end;gap:0;
+}
+.mhead > p{
+  margin:0 0 .55rem;font-size:.875rem;color:var(--muted);align-self:end;
+  padding-right:1.5rem;
+}
+.mcols{display:grid;grid-template-columns:repeat(4,1fr);align-items:end}
+.mcols span{
+  font-size:.75rem;font-weight:600;line-height:1.18;letter-spacing:-.01em;
+  color:var(--ink);padding:0 .45rem .45rem;align-self:end;
+  border-bottom:3px solid var(--rule-mid);
+}
+.h-mig{border-bottom-color:var(--mig)}
+.h-env{border-bottom-color:var(--env)}
+.h-hea{border-bottom-color:var(--hea)}
+.h-rur{border-bottom-color:var(--rur)}
+
+.matrix{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.project{
+  display:grid;grid-template-columns:1fr var(--cells);
+  border-bottom:1px solid var(--rule-mid);
+}
+.pbody{padding:1.9rem 1.75rem 1.9rem 0;min-width:0}
+.pcells{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--rule)}
+.cell{border-right:1px solid var(--rule)}
+.cell:last-child{border-right:0}
+.cell i{display:none}
+.cell.on.d-mig{background:var(--mig)}
+.cell.on.d-env{background:var(--env)}
+.cell.on.d-hea{background:var(--hea)}
+.cell.on.d-rur{background:var(--rur)}
+
+.role-line{margin:0 0 .85rem;color:var(--body);max-width:60ch}
+.meta{margin:0;font-size:.9375rem;color:var(--muted);max-width:60ch}
+.meta a{color:var(--rur);text-decoration-thickness:1px;text-underline-offset:2px}
+.pphoto{margin:1.4rem 0 0;max-width:22rem}
+.pphoto img{aspect-ratio:16/9;object-fit:cover}
+.pphoto figcaption{margin:.5rem 0 0;font-size:.75rem;color:var(--muted)}
+
+/* papers inside a project */
+.papers{margin:1.5rem 0 0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.paper{display:grid;grid-template-columns:10rem 1fr;gap:0 1.5rem;padding:1rem 0;border-bottom:1px solid var(--rule)}
+.paper:last-child{border-bottom:0}
+.status{display:flex;align-items:baseline;gap:.5rem;font-size:.8125rem;font-weight:500;color:var(--body);line-height:1.5}
+.status::before{content:"";width:.6rem;height:.6rem;flex:0 0 auto;background:var(--st1);transform:translateY(-1px)}
+.s-near::before{background:var(--st2)}
+.s-rev::before{background:var(--st3)}
+.s-cond::before{background:var(--st4)}
+.s-pub{font-weight:600;color:var(--ink)}
+.s-pub::before{background:var(--st5)}
+.paper .t{margin:0;font-size:1.0625rem;font-weight:600;line-height:1.38;letter-spacing:-.012em;max-width:52ch}
+/* per-paper domain chips — same four colours, smaller than the project chips */
+.pdoms{display:flex;flex-wrap:wrap;gap:.25rem;margin:.45rem 0 0}
+.pdoms span{
+  font-size:.625rem;font-weight:600;line-height:1.35;
+  padding:.16rem .42rem;letter-spacing:.005em;white-space:nowrap;
+}
+.pdoms .d-mig{background:var(--mig);color:var(--mig-on)}
+.pdoms .d-env{background:var(--env);color:#fff}
+.pdoms .d-hea{background:var(--hea);color:#fff}
+.pdoms .d-rur{background:var(--rur);color:#fff}
+.paper .a{margin:.3rem 0 0;font-size:.875rem;color:var(--muted);line-height:1.45;max-width:58ch}
+.paper .a em{font-style:italic;color:var(--body)}
+.paper .a .me{font-weight:600;color:var(--ink)}   /* marks author position at a glance */
+
+.paper .d{margin:.6rem 0 0;font-size:.9375rem;color:var(--body);max-width:62ch}
+.paper a{color:var(--rur);text-decoration-thickness:1px;text-underline-offset:2px}
+
+/* ---------- expertise & list blocks ---------- */
+.expertise{margin-top:3.5rem}
+.expertise h3{font-size:1.0625rem;margin-bottom:1.5rem;padding-top:1rem;border-top:2px solid var(--ink)}
+.cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem}
+.blockhead{font-weight:600;font-size:.9375rem;margin:0 0 .75rem;color:var(--ink);letter-spacing:-.008em}
+.bullets{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.bullets li{padding-left:1.1rem;position:relative;font-size:.9375rem;color:var(--body);line-height:1.5}
+.bullets li::before{content:"";position:absolute;left:0;top:.55rem;width:.3rem;height:.3rem;background:var(--ink)}
+
+.block + .block{margin-top:2.25rem}
+
+/* a dated list — talks, courses, service */
+/* .wide spreads a bullet list across the full measure — use it when a
+   list is the only thing in its section and would otherwise leave the
+   right half of the page empty. */
+.bullets.wide{display:block;columns:2;column-gap:3.5rem}
+.bullets.wide li{break-inside:avoid;margin:0 0 .6rem}
+.bullets.wide li:last-child{margin-bottom:0}
+
+.listing{margin:0;padding:0;list-style:none;border-top:1px solid var(--rule)}
+.listing li{padding:.7rem 0;border-bottom:1px solid var(--rule);font-size:.9375rem;display:grid;grid-template-columns:1fr auto;gap:1.5rem}
+.listing .when{color:var(--muted);white-space:nowrap;font-size:.875rem}
+.listing .sub{display:block;color:var(--muted);font-size:.875rem;margin-top:.1rem}
+
+/* ---------- cv ---------- */
+.cvbtn{
+  display:inline-block;margin-top:.5rem;background:var(--ink);color:#fff;
+  text-decoration:none;font-weight:600;font-size:.9375rem;padding:.85rem 1.4rem;
+  letter-spacing:-.005em;
+}
+.cvbtn:hover,.cvbtn:focus-visible{background:var(--rur)}
+
+/* ---------- footer ---------- */
+footer{margin-top:5.5rem;background:var(--ink-deep);color:#93A8B0;font-size:.9375rem}
+.footrow{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;padding:2.5rem 0}
+footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--mig);padding-bottom:1px}
+footer a:hover,footer a:focus-visible{background:var(--mig);color:var(--mig-on)}
+
+:focus-visible{outline:3px solid var(--rur);outline-offset:2px}
+.plate :focus-visible,.topbar :focus-visible,footer :focus-visible{outline-color:var(--mig)}
+
+/* ============================================================
+   responsive
+   ============================================================ */
+/* Below this width the four columns can no longer hold their labels,
+   so the matrix collapses: filled domains become chips above the title. */
+@media (max-width:62rem){
+  .mhead{display:none}
+  .project{grid-template-columns:1fr;padding-bottom:.5rem}
+  .pbody{padding:0 0 1.5rem;order:2}
+  .pcells{display:flex;flex-wrap:wrap;gap:.3rem;border-left:0;order:1;padding:1.5rem 0 1rem}
+  .cell{border-right:0}
+  .cell:not(.on){display:none}
+  .cell i{
+    display:block;font-style:normal;font-size:.75rem;font-weight:600;
+    padding:.2rem .5rem;line-height:1.35;
   }
-  *,*::before,*::after{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-  body{margin:0;background:var(--surface);color:var(--ink);font-family:var(--text);font-size:1.0625rem;line-height:1.62}
-  .wrap{max-width:66rem;margin:0 auto;padding:0 2rem}
-  img{max-width:100%;height:auto;display:block}
+  .cell.on.d-mig i{color:var(--mig-on)}
+  .cell.on.d-env i,.cell.on.d-hea i,.cell.on.d-rur i{color:#fff}
+}
 
-  .topbar{position:sticky;top:0;z-index:20;background:var(--plate);border-bottom:1px solid rgba(255,255,255,.1)}
-  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding-top:.85rem;padding-bottom:.85rem}
-  .wordmark{font-family:var(--display);font-weight:600;font-size:1rem;color:#fff;text-decoration:none}
-  .nav{display:flex;gap:1.5rem;font-size:.9375rem;font-weight:500}
-  .nav a{color:#9DB8B9;text-decoration:none;padding-bottom:3px;border-bottom:2px solid transparent}
-  .nav a:hover,.nav a:focus-visible{color:#fff;border-bottom-color:var(--mig)}
+@media (max-width:52rem){
+  :root{--gutter:1.5rem}
+  section{scroll-margin-top:7rem}
+  .nav{gap:1.15rem}
+  .hero{grid-template-columns:1fr;gap:2.25rem;padding:2.75rem 0 3rem}
+  .hero-portrait{max-width:16rem;aspect-ratio:1/1}
+  .band{grid-template-columns:repeat(2,1fr)}
+  .band div{min-height:6rem;padding:1.1rem .9rem 1rem}
+  .band span{font-size:1.0625rem}
+  .cols3{grid-template-columns:1fr;gap:2.25rem}
+  .bullets.wide{columns:1}
+  .strip{grid-template-columns:1fr 1fr}
+  .paper{grid-template-columns:1fr;gap:.4rem}
+  .pphoto{max-width:100%}
+}
 
-  .plate{background:var(--plate);color:#EAF2F0}
-  .hero{
-    display:grid;gap:6px;padding:2.75rem 0 3.25rem;
-    grid-template-columns:1.6fr 1fr 1fr;
-    grid-template-areas:"text mig port" "text env port" "text hea rur";
-  }
-  .hero-text{grid-area:text;align-self:center;padding-right:2.25rem}
-  .blk{display:flex;align-items:flex-end;padding:.9rem 1rem;border-radius:2px;min-height:7rem}
-  .blk span{font-size:1.5rem;font-weight:600;line-height:1.14;letter-spacing:-.01em}
-  .blk-mig{grid-area:mig;background:var(--mig);color:#12222A}
-  .blk-env{grid-area:env;background:var(--env);color:#fff}
-  .blk-hea{grid-area:hea;background:var(--hea);color:#fff}
-  .blk-rur{grid-area:rur;background:var(--rur);color:#fff}
-  .hero-portrait{grid-area:port;width:100%;height:100%;object-fit:cover;object-position:50% 22%;border-radius:2px}
-  .name{font-family:var(--display);font-weight:600;font-size:clamp(2.3rem,5.4vw,3.7rem);line-height:1.06;letter-spacing:-.02em;margin:0;color:#fff;text-wrap:balance}
-  .role{margin:1.25rem 0 0;max-width:46ch;color:#BBD2D1}
-  .keywords{margin:1.6rem 0 0;max-width:50ch;color:#8FAFAF;font-size:.9375rem;line-height:1.6}
-  .taglist{display:flex;gap:.5rem;flex-wrap:wrap;margin:1.5rem 0 0;padding:0;list-style:none}
-  .taglist .tag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#E6F0EE}
-  .contact{margin:1.75rem 0 0;font-size:.9375rem}
-  .contact a{color:#fff;border-bottom:1px solid rgba(255,255,255,.4);text-decoration:none}
-  .contact a:hover,.contact a:focus-visible{border-bottom-color:var(--mig)}
-
-  section{padding:4.5rem 0 0;scroll-margin-top:4.5rem}
-  h2{font-family:var(--display);font-weight:600;font-size:1.7rem;line-height:1.2;margin:0 0 .55rem}
-  .sectionnote{margin:0 0 2rem;color:var(--muted);font-size:.9375rem;max-width:60ch}
-  h3{font-family:var(--display);font-weight:600;font-size:1.25rem;line-height:1.28;margin:0 0 .45rem}
-  .prose{max-width:64ch;font-size:1.125rem;color:var(--body)}
-  .prose p{margin:0 0 1.15rem}
-  .prose p:last-child{margin-bottom:0}
-  .prose a{color:var(--rur)}
-
-  .tags{display:flex;gap:.4rem;flex-wrap:wrap;margin:0 0 .85rem;padding:0;list-style:none}
-  .tag{display:inline-flex;align-items:center;gap:.35rem;font-size:.75rem;font-weight:600;border:1px solid var(--rule);border-radius:3px;padding:.15rem .45rem;color:var(--body)}
-  .tag .dot{width:.5rem;height:.5rem;border-radius:50%;flex:0 0 auto}
-  .dot.mig{background:var(--mig)} .dot.env{background:var(--env)}
-  .dot.hea{background:var(--hea)} .dot.rur{background:var(--rur)}
-
-  .strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:2.5rem 0 0}
-  .strip figure{margin:0}
-  .strip img{aspect-ratio:4/3;object-fit:cover;border-radius:3px}
-  .strip figcaption{margin:.5rem 0 0;font-size:.8125rem;color:var(--muted);line-height:1.45}
-
-  /* research questions, in her words */
-  .asks{display:grid;grid-template-columns:1fr 17rem;gap:3rem;align-items:center;margin:0 0 1.5rem}
-  .asklead{font-size:.9375rem;color:var(--muted);margin:0 0 1rem}
-  .question{font-family:var(--display);font-weight:500;font-size:1.3125rem;line-height:1.38;color:var(--ink);margin:0 0 1rem;padding-left:1.1rem;border-left:3px solid var(--mig);max-width:48ch}
-  .question:last-of-type{margin-bottom:0;border-left-color:var(--rur)}
-  .vennwrap{display:flex;flex-direction:column;gap:1.1rem}
-  .venn{width:100%;height:auto;display:block}
-  .key{display:grid;grid-template-columns:1fr;gap:.5rem;margin:0;padding:0;list-style:none;font-size:.875rem;color:var(--body)}
-  .key li{display:flex;align-items:center;gap:.55rem}
-  .key .dot{width:.7rem;height:.7rem;border-radius:50%;flex:0 0 auto}
-  .venn text{font-family:var(--text);font-weight:600}
-
-  .projects{margin:2rem 0 0;padding:0;list-style:none}
-  .project{position:relative;padding:2rem 0 2rem 1.5rem;border-top:1px solid var(--rule)}
-  .project:last-child{border-bottom:1px solid var(--rule)}
-  .project::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--stripe,var(--rule));border-radius:2px}
-  .pgrid{display:grid;grid-template-columns:1fr 15rem;gap:2rem}
-  .pgrid.nophoto{grid-template-columns:1fr}
-  .role-line{margin:0 0 .9rem;color:var(--body);max-width:62ch}
-  .meta{margin:0 0 1rem;font-size:.9375rem;color:var(--muted)}
-  .meta a{color:var(--rur)}
-  .pphoto img{aspect-ratio:4/3;object-fit:cover;border-radius:3px}
-  .pphoto figcaption{margin:.45rem 0 0;font-size:.75rem;color:var(--muted);line-height:1.4}
-
-  .papers{margin:.5rem 0 0;padding:0;list-style:none;border-top:1px dotted var(--rule)}
-  .paper{display:grid;grid-template-columns:9.5rem 1fr;gap:0 1.25rem;padding:.95rem 0;border-bottom:1px dotted var(--rule)}
-  .paper:last-child{border-bottom:0}
-  .status{font-size:.8125rem;font-weight:600;line-height:1.45;padding-top:.1rem}
-  .s-pub{color:var(--env)} .s-cond{color:var(--rur)} .s-rev{color:var(--hea)}
-  .s-near{color:#A97400} .s-prog{color:var(--muted)}
-  .paper .t{margin:0;font-size:1rem;font-weight:500;line-height:1.45}
-  .paper .a{margin:.2rem 0 0;font-size:.875rem;color:var(--muted)}
-  .paper .d{margin:.5rem 0 0;font-size:.9375rem;color:var(--body);max-width:60ch}
-  .paper a{color:var(--rur)}
-
-  .expertise{margin-top:3.5rem;padding-top:2.5rem;border-top:1px solid var(--rule)}
-  .cols3{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;margin-top:1.75rem}
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
-  .blockhead{font-weight:600;font-size:.9375rem;margin:0 0 .6rem;color:var(--ink)}
-  .block + .block{margin-top:2.25rem}
-  .bullets{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:.45rem}
-  .bullets li{padding-left:1rem;position:relative;font-size:.9375rem;color:var(--body);line-height:1.5}
-  .bullets li::before{content:"";position:absolute;left:0;top:.6rem;width:.35rem;height:.35rem;border-radius:50%;background:var(--accent,var(--rur))}
-
-  .listing{margin:0;padding:0;list-style:none}
-  .listing li{padding:.55rem 0;border-bottom:1px solid var(--rule);font-size:.9375rem;display:grid;grid-template-columns:1fr auto;gap:1rem}
-  .listing li:last-child{border-bottom:0}
-  .listing .when{color:var(--muted);white-space:nowrap;font-size:.875rem}
-  .listing .sub{display:block;color:var(--muted);font-size:.875rem;margin-top:.15rem}
-
-  .cvbtn{display:inline-block;margin-top:1.5rem;background:var(--plate);color:#fff;text-decoration:none;font-weight:500;font-size:.9375rem;padding:.6rem 1.1rem;border-radius:3px}
-  .cvbtn:hover,.cvbtn:focus-visible{background:var(--plate-deep)}
-
-  footer{margin-top:5rem;background:var(--plate-deep);color:#9DB8B9;font-size:.9375rem}
-  .footrow{display:flex;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;padding:2rem 0}
-  footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
-  footer a:hover,footer a:focus-visible{border-bottom-color:var(--mig)}
-
-  a:focus-visible{outline:2px solid var(--mig);outline-offset:3px;border-radius:2px}
-
-  @media (max-width:30rem){
-    .blk span{font-size:1.25rem;font-weight:700}
-    .key{grid-template-columns:1fr}
-  }
-  @media (max-width:56rem){
-    .hero{
-      grid-template-columns:1fr 1fr;
-      grid-template-areas:"text text" "port mig" "port env" "hea rur";
-      padding:2rem 0 2.5rem;
-    }
-    .hero-text{padding-right:0;margin-bottom:.75rem}
-    .hero-portrait{min-height:14rem}
-    .asks{grid-template-columns:1fr;gap:2rem}
-    .vennwrap{max-width:20rem;margin:0 auto}
-    .pgrid{grid-template-columns:1fr}
-    .pphoto{max-width:20rem}
-    .cols,.cols3{grid-template-columns:1fr;gap:2.25rem}
-    .strip{grid-template-columns:1fr 1fr}
-    .paper{grid-template-columns:1fr;gap:.2rem}
-  }
+@media (max-width:30rem){
+  .band{grid-template-columns:1fr}
+  .band div{min-height:0;padding:.9rem 1rem}
+  .strip{grid-template-columns:1fr}
+  .footrow{flex-direction:column;gap:.75rem}
+}
